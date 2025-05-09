@@ -1,0 +1,41 @@
+# Ignora pastas do sistema operacional
+$Recycle.Bin/
+Documents and Settings/
+System Volume Information/
+
+# Ignora pastas de programas e arquivos temporários
+/AppClock/
+/Bing/
+/ContosoRetailDW/
+/DumpStack.log
+/DumpStack.log.tmp
+/Exercicios_Javascript_Coursera/
+/Expandindo-cardsGPT/
+/Hashtag_Word/
+/Hashtag_python/
+/NVIDIA/
+/Portfolio/
+/Power_up/
+/Program Files (x86)/
+/Program Files/
+/ProgramData/
+/ProjetoChatComNode/
+/Projetos_com_GPT/
+/Python13/
+/Recovery/
+/SQL2022/
+/Site_sonia/
+/Users/
+/Windows/
+
+# Outros exemplos comuns
+*.log
+*.tmp
+
+# Pastas específicas do projeto
+/.vscode/
+/__pycache__/
+/*.sqlite3
+/db.sqlite3
+/media/
+/staticfiles/
