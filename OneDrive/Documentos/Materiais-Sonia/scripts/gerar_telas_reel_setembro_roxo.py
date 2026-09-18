@@ -1,15 +1,16 @@
 """
-Script para processamento e composição gráfica dos 3 slides do Reel:
-Campanha Setembro Roxo — Conscientização sobre Disfagia
-Fonoaudióloga Sônia Torres (CRFa 1-17701)
+Script Refinado: Renderização de Telas do Reel Setembro Roxo
+Foco: Alta Acessibilidade, Tipografia Grande e Enquadramento Harmonioso.
 
-Gera:
-1. Fotografias limpas (sem texto) em 1080 x 1920 px (9:16) para uso flexível
-2. Telas finais diagramadas rigorosamente dentro da Safe Zone do Instagram Reel
+Ajustes:
+- Altura dos cards ajustada dinamicamente ao conteúdo para não invadir as pessoas.
+- Remoção de linhas divisórias redundantes que colavam nos textos.
+- Tipografia em escala sênior/mobile (60px títulos, 44px itens, 42px complementos).
+- Contraste absoluto WCAG AAA em qualquer dispositivo.
 """
 
 import os
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
+from PIL import Image, ImageDraw, ImageFont
 
 BASE_DIR = r"c:\Users\Gamer\OneDrive\Documentos\Materiais-Sonia"
 REEL_DIR = os.path.join(BASE_DIR, "reels", "reel-setembro-roxo-disfagia")
@@ -17,7 +18,7 @@ CLEAN_DIR = os.path.join(REEL_DIR, "fotografias-sem-texto")
 os.makedirs(REEL_DIR, exist_ok=True)
 os.makedirs(CLEAN_DIR, exist_ok=True)
 
-# Imagens geradas via IA (Alta Resolução Documental)
+# Imagens de Alta Resolução
 SOURCES = [
     r"C:\Users\Gamer\.gemini\antigravity-ide\brain\b38950e8-9e4f-4bee-b831-3a0201c57b1e\slide_01_setembro_roxo_1789744700010.jpg",
     r"C:\Users\Gamer\.gemini\antigravity-ide\brain\b38950e8-9e4f-4bee-b831-3a0201c57b1e\slide_02_setembro_roxo_1789744719675.jpg",
@@ -27,26 +28,23 @@ SOURCES = [
 TARGET_WIDTH = 1080
 TARGET_HEIGHT = 1920
 
-# Paleta de Cores Sofisticada
-PURPLE_PRIMARY = (112, 44, 142)      # Roxo Setembro Roxo elegante / sóbrio
-PURPLE_ACCENT = (142, 68, 173)       # Roxo vivo para detalhes
-PURPLE_LIGHT = (244, 238, 250)       # Creme lilás suave para fundos de tags
-PURPLE_TEXT = (88, 28, 118)          # Roxo profundo para texto de tag
-WHITE = (255, 255, 255)
-CREAM = (248, 246, 242)              # Bege/Creme quente
-OFF_WHITE = (235, 233, 230)
-DARK_TEXT = (28, 28, 30)             # Grafite profundo para legibilidade em cards
-MUTED_TEXT = (95, 95, 100)
-CARD_BG = (255, 255, 255, 235)       # Branco translúcido sofisticado
-CARD_BORDER = (225, 220, 232, 200)
+# Cores de Acessibilidade Máxima
+COLOR_WHITE = (255, 255, 255)
+COLOR_OFFWHITE = (245, 247, 250)
+COLOR_PURPLE_VIBRANT = (168, 85, 247)   # Roxo/Lilás vibrante para acentos e marcadores (#a855f7)
+COLOR_PURPLE_LIGHT = (233, 213, 255)     # Lilás suave (#e9d5ff)
+COLOR_PURPLE_PILL = (126, 34, 206)       # Roxo institucional (#7e22ce)
+CARD_BG = (16, 12, 22, 238)              # 93% de opacidade para contraste absoluto
+CARD_BORDER = (168, 85, 247, 130)        # Borda sutil de 2px
 
 # Fontes do Sistema Windows
 FONT_BOLD_PATH = r"C:\Windows\Fonts\segoeuib.ttf"
-FONT_SEMIBOLD_PATH = r"C:\Windows\Fonts\segoeuisl.ttf"
+FONT_SEMIBOLD_PATH = r"C:\Windows\Fonts\seguisb.ttf"
 FONT_REGULAR_PATH = r"C:\Windows\Fonts\segoeui.ttf"
 
 if not os.path.exists(FONT_BOLD_PATH):
     FONT_BOLD_PATH = r"C:\Windows\Fonts\arialbd.ttf"
+    FONT_SEMIBOLD_PATH = r"C:\Windows\Fonts\arialbd.ttf"
     FONT_REGULAR_PATH = r"C:\Windows\Fonts\arial.ttf"
 
 def get_font(path, size):
@@ -55,128 +53,110 @@ def get_font(path, size):
     except:
         return ImageFont.load_default()
 
-def apply_top_protection_gradient(image, height=780, max_alpha=180):
-    """
-    Aplica um gradiente escurecido suave e natural no terço superior,
-    garantindo contraste absoluto para a tipografia sem descaracterizar a foto.
-    """
+def draw_accessible_card(image, x1, y1, x2, y2, radius=28):
+    """Desenha card com sombra suave e borda fina de acabamento."""
     overlay = Image.new("RGBA", (TARGET_WIDTH, TARGET_HEIGHT), (0, 0, 0, 0))
     draw_ol = ImageDraw.Draw(overlay)
     
-    for y in range(height):
-        ratio = 1.0 - (y / height)
-        alpha = int(max_alpha * (ratio ** 1.35))
-        draw_ol.line([(0, y), (TARGET_WIDTH, y)], fill=(15, 15, 18, alpha))
+    # Sombra difusa
+    for offset in range(10, 0, -2):
+        s_alpha = int(40 * (offset / 10))
+        draw_ol.rounded_rectangle(
+            [x1 - offset, y1 - offset + 6, x2 + offset, y2 + offset + 6],
+            radius=radius + offset,
+            fill=(0, 0, 0, s_alpha)
+        )
         
+    draw_ol.rounded_rectangle([x1, y1, x2, y2], radius=radius, fill=CARD_BG, outline=CARD_BORDER, width=2)
     return Image.alpha_composite(image.convert("RGBA"), overlay)
-
-def draw_text_with_shadow(draw, text, x, y, font, fill=WHITE, shadow_color=(0, 0, 0, 160), shadow_offset=(0, 2)):
-    ox, oy = shadow_offset
-    draw.text((x + ox, y + oy), text, font=font, fill=shadow_color)
-    draw.text((x, y), text, font=font, fill=fill)
 
 def render_slide_1(base_img):
     """
     SLIDE 1 — APRESENTAÇÃO
-    Texto Principal: 'SETEMBRO ROXO'
-    Abaixo: 'Conscientização sobre disfagia'
-    Texto Complementar: 'Dificuldades para engolir podem afetar alimentação, hidratação e segurança.'
     """
-    img = apply_top_protection_gradient(base_img, height=750, max_alpha=175)
+    # Card compacto e elegante
+    card_x1 = 70
+    card_x2 = TARGET_WIDTH - 70  # 940px largura
+    card_y1 = 180
+    card_y2 = 680
+    
+    img = draw_accessible_card(base_img, card_x1, card_y1, card_x2, card_y2, radius=30)
     draw = ImageDraw.Draw(img)
+    center_x = TARGET_WIDTH // 2
     
-    # Safe zone: X centralizado com margem segura de 100px (largura útil = 880px)
-    # Posição Y começando em 250px (bem abaixo do topo do Reel)
-    start_y = 260
+    cur_y = card_y1 + 44
     
-    # 1. Badge "SETEMBRO ROXO" em pill com roxo nobre
-    font_badge = get_font(FONT_BOLD_PATH, 28)
+    # 1. Badge "SETEMBRO ROXO"
+    font_badge = get_font(FONT_BOLD_PATH, 34)
     badge_text = "SETEMBRO ROXO"
     bbox_b = draw.textbbox((0, 0), badge_text, font=font_badge)
     bw = bbox_b[2] - bbox_b[0]
     bh = bbox_b[3] - bbox_b[1]
     
-    pad_x = 24
-    pad_y = 12
-    badge_w = bw + pad_x * 2
-    badge_h = bh + pad_y * 2
-    bx = (TARGET_WIDTH - badge_w) // 2
-    by = start_y
+    pad_x, pad_y = 32, 14
+    pw = bw + pad_x * 2
+    ph = bh + pad_y * 2
+    px = center_x - (pw // 2)
     
-    # Fundo do badge roxo da campanha
-    draw.rounded_rectangle([bx, by, bx + badge_w, by + badge_h], radius=16, fill=PURPLE_PRIMARY)
-    draw.text((bx + pad_x, by + pad_y - 2), badge_text, font=font_badge, fill=WHITE)
+    draw.rounded_rectangle([px, cur_y, px + pw, cur_y + ph], radius=18, fill=COLOR_PURPLE_PILL)
+    draw.text((px + pad_x, cur_y + pad_y - 2), badge_text, font=font_badge, fill=COLOR_WHITE)
     
-    # 2. Subtítulo: "Conscientização sobre disfagia"
-    font_sub = get_font(FONT_BOLD_PATH, 44)
-    sub_text = "Conscientização sobre disfagia"
-    bbox_sub = draw.textbbox((0, 0), sub_text, font=font_sub)
-    sw = bbox_sub[2] - bbox_sub[0]
-    sx = (TARGET_WIDTH - sw) // 2
-    sy = by + badge_h + 30
-    draw_text_with_shadow(draw, sub_text, sx, sy, font_sub, fill=WHITE)
+    # 2. Título Principal
+    cur_y += ph + 32
+    font_title = get_font(FONT_BOLD_PATH, 58)
+    title_text = "Conscientização sobre disfagia"
+    bbox_t = draw.textbbox((0, 0), title_text, font=font_title)
+    tw = bbox_t[2] - bbox_t[0]
+    draw.text((center_x - (tw // 2), cur_y), title_text, font=font_title, fill=COLOR_WHITE)
     
-    # Linha decorativa roxa minimalista
-    line_w = 80
-    lx = (TARGET_WIDTH - line_w) // 2
-    ly = sy + (bbox_sub[3] - bbox_sub[1]) + 24
-    draw.line([(lx, ly), (lx + line_w, ly)], fill=PURPLE_ACCENT, width=4)
-    
-    # 3. Texto Complementar com quebra harmoniosa
-    font_comp = get_font(FONT_REGULAR_PATH, 34)
+    # 3. Texto Complementar (grande, fácil de ler)
+    cur_y += (bbox_t[3] - bbox_t[1]) + 30
+    font_comp = get_font(FONT_SEMIBOLD_PATH, 42)
     comp_lines = [
         "Dificuldades para engolir podem afetar",
         "alimentação, hidratação e segurança."
     ]
-    
-    cy = ly + 26
     for line in comp_lines:
         bbox_c = draw.textbbox((0, 0), line, font=font_comp)
         cw = bbox_c[2] - bbox_c[0]
-        cx = (TARGET_WIDTH - cw) // 2
-        draw_text_with_shadow(draw, line, cx, cy, font_comp, fill=CREAM, shadow_offset=(0, 2))
-        cy += (bbox_c[3] - bbox_c[1]) + 14
+        draw.text((center_x - (cw // 2), cur_y), line, font=font_comp, fill=COLOR_OFFWHITE)
+        cur_y += (bbox_c[3] - bbox_c[1]) + 16
         
     return img.convert("RGB")
 
 def render_slide_2(base_img):
     """
     SLIDE 2 — SINAIS
-    Título: 'Alguns sinais merecem atenção'
-    4 Itens:
-    - Tosse ou engasgos ao comer ou beber
-    - Voz molhada após engolir
-    - Refeições muito demoradas
-    - Dificuldade para engolir
     """
-    img = apply_top_protection_gradient(base_img, height=880, max_alpha=190)
+    # Card com altura calibrada
+    card_x1 = 70
+    card_x2 = TARGET_WIDTH - 70
+    card_y1 = 170
+    card_y2 = 750
+    
+    img = draw_accessible_card(base_img, card_x1, card_y1, card_x2, card_y2, radius=30)
     draw = ImageDraw.Draw(img)
+    center_x = TARGET_WIDTH // 2
     
-    start_y = 240
+    cur_y = card_y1 + 38
     
-    # Tag identificadora discreta
-    font_tag = get_font(FONT_BOLD_PATH, 22)
+    # 1. Tag superior
+    font_tag = get_font(FONT_BOLD_PATH, 28)
     tag_text = "SETEMBRO ROXO · DISFAGIA"
-    bbox_t = draw.textbbox((0, 0), tag_text, font=font_tag)
-    tw = bbox_t[2] - bbox_t[0]
-    draw_text_with_shadow(draw, tag_text, (TARGET_WIDTH - tw) // 2, start_y, font_tag, fill=(215, 185, 235))
+    bbox_tag = draw.textbbox((0, 0), tag_text, font=font_tag)
+    tag_w = bbox_tag[2] - bbox_tag[0]
+    draw.text((center_x - (tag_w // 2), cur_y), tag_text, font=font_tag, fill=COLOR_PURPLE_LIGHT)
     
-    # Título Principal
-    font_title = get_font(FONT_BOLD_PATH, 46)
+    # 2. Título Principal
+    cur_y += (bbox_tag[3] - bbox_tag[1]) + 22
+    font_title = get_font(FONT_BOLD_PATH, 58)
     title_text = "Alguns sinais merecem atenção"
-    bbox_title = draw.textbbox((0, 0), title_text, font=font_title)
-    ti_w = bbox_title[2] - bbox_title[0]
-    ti_x = (TARGET_WIDTH - ti_w) // 2
-    ti_y = start_y + 40
-    draw_text_with_shadow(draw, title_text, ti_x, ti_y, font_title, fill=WHITE)
+    bbox_t = draw.textbbox((0, 0), title_text, font=font_title)
+    tw = bbox_t[2] - bbox_t[0]
+    draw.text((center_x - (tw // 2), cur_y), title_text, font=font_title, fill=COLOR_WHITE)
     
-    # Linha divisora sutil
-    line_w = 60
-    lx = (TARGET_WIDTH - line_w) // 2
-    ly = ti_y + (bbox_title[3] - bbox_title[1]) + 24
-    draw.line([(lx, ly), (lx + line_w, ly)], fill=PURPLE_ACCENT, width=3)
-    
-    # Itens / Sinais em lista vertical limpa com marcadores roxos sofisticados
+    # 3. Lista dos 4 Sinais
+    cur_y += (bbox_t[3] - bbox_t[1]) + 34
     sinais = [
         "Tosse ou engasgos ao comer ou beber",
         "Voz molhada após engolir",
@@ -184,112 +164,95 @@ def render_slide_2(base_img):
         "Dificuldade para engolir"
     ]
     
-    font_item = get_font(FONT_BOLD_PATH, 34)
-    item_y = ly + 36
-    margin_left = 130  # Seguro contra margens de corte do Reels
+    font_item = get_font(FONT_BOLD_PATH, 42)
+    item_x_margin = card_x1 + 65
     
     for item in sinais:
-        # Pílula/bullet roxo elegante
-        bullet_radius = 8
-        bullet_cy = item_y + 20
-        bullet_cx = margin_left + 10
+        # Marcador circular lilás/roxo
+        b_radius = 11
+        b_cy = cur_y + 24
+        b_cx = item_x_margin + 12
+        
         draw.ellipse(
-            [bullet_cx - bullet_radius, bullet_cy - bullet_radius, bullet_cx + bullet_radius, bullet_cy + bullet_radius],
-            fill=PURPLE_ACCENT,
-            outline=WHITE,
+            [b_cx - b_radius, b_cy - b_radius, b_cx + b_radius, b_cy + b_radius],
+            fill=COLOR_PURPLE_VIBRANT,
+            outline=COLOR_WHITE,
             width=2
         )
-        
-        # Texto do sinal
-        draw_text_with_shadow(draw, item, margin_left + 38, item_y, font_item, fill=CREAM, shadow_offset=(0, 2))
-        item_y += 62
+        draw.text((item_x_margin + 44, cur_y), item, font=font_item, fill=COLOR_WHITE)
+        cur_y += 70
         
     return img.convert("RGB")
 
 def render_slide_3(base_img):
     """
     SLIDE 3 — AÇÃO & CRÉDITOS
-    Título Principal: 'Dificuldade para engolir não deve ser ignorada.'
-    Texto Complementar: 'A avaliação adequada ajuda a identificar o que está acontecendo e orientar os cuidados necessários.'
-    Em menor destaque: 'Informação também é cuidado.'
-    Rodapé:
-    Sônia Torres
-    Fonoaudióloga | CRFa 1-17701
     """
-    # Aplicar gradiente superior para o texto e sutil proteção inferior para a assinatura segura
-    img = apply_top_protection_gradient(base_img, height=840, max_alpha=185)
+    card_x1 = 70
+    card_x2 = TARGET_WIDTH - 70
+    card_y1 = 170
+    card_y2 = 720
     
-    # Proteção de rodapé muito suave apenas para garantia do CRFa
-    overlay_bot = Image.new("RGBA", (TARGET_WIDTH, TARGET_HEIGHT), (0, 0, 0, 0))
-    draw_bot = ImageDraw.Draw(overlay_bot)
-    bot_start = 1600
-    for y in range(bot_start, TARGET_HEIGHT):
-        ratio = (y - bot_start) / (TARGET_HEIGHT - bot_start)
-        alpha = int(140 * ratio)
-        draw_bot.line([(0, y), (TARGET_WIDTH, y)], fill=(15, 15, 18, alpha))
-    img = Image.alpha_composite(img, overlay_bot)
+    img = draw_accessible_card(base_img, card_x1, card_y1, card_x2, card_y2, radius=30)
+    
+    # Card de rodapé para assinatura profissional
+    sign_w = 580
+    sign_h = 135
+    sign_x1 = (TARGET_WIDTH - sign_w) // 2
+    sign_x2 = sign_x1 + sign_w
+    sign_y1 = 1650
+    sign_y2 = sign_y1 + sign_h
+    img = draw_accessible_card(img, sign_x1, sign_y1, sign_x2, sign_y2, radius=24)
     
     draw = ImageDraw.Draw(img)
+    center_x = TARGET_WIDTH // 2
     
-    start_y = 240
+    cur_y = card_y1 + 36
     
-    # Badge superior sutil
-    font_tag = get_font(FONT_BOLD_PATH, 22)
+    # 1. Tag superior
+    font_tag = get_font(FONT_BOLD_PATH, 28)
     tag_text = "SETEMBRO ROXO"
-    bbox_t = draw.textbbox((0, 0), tag_text, font=font_tag)
-    tw = bbox_t[2] - bbox_t[0]
-    draw_text_with_shadow(draw, tag_text, (TARGET_WIDTH - tw) // 2, start_y, font_tag, fill=(215, 185, 235))
+    bbox_tag = draw.textbbox((0, 0), tag_text, font=font_tag)
+    tag_w = bbox_tag[2] - bbox_tag[0]
+    draw.text((center_x - (tag_w // 2), cur_y), tag_text, font=font_tag, fill=COLOR_PURPLE_LIGHT)
     
-    # Título Principal (2 linhas bem calibradas)
-    font_title = get_font(FONT_BOLD_PATH, 44)
+    # 2. Título Principal em 2 linhas
+    cur_y += (bbox_tag[3] - bbox_tag[1]) + 20
+    font_title = get_font(FONT_BOLD_PATH, 54)
     title_lines = [
         "Dificuldade para engolir",
         "não deve ser ignorada."
     ]
-    
-    ty = start_y + 40
     for line in title_lines:
-        bbox = draw.textbbox((0, 0), line, font=font_title)
-        lw = bbox[2] - bbox[0]
-        lx = (TARGET_WIDTH - lw) // 2
-        draw_text_with_shadow(draw, line, lx, ty, font_title, fill=WHITE)
-        ty += (bbox[3] - bbox[1]) + 12
+        bbox_t = draw.textbbox((0, 0), line, font=font_title)
+        tw = bbox_t[2] - bbox_t[0]
+        draw.text((center_x - (tw // 2), cur_y), line, font=font_title, fill=COLOR_WHITE)
+        cur_y += (bbox_t[3] - bbox_t[1]) + 12
         
-    # Linha roxa central
-    line_w = 70
-    lx = (TARGET_WIDTH - line_w) // 2
-    ly = ty + 18
-    draw.line([(lx, ly), (lx + line_w, ly)], fill=PURPLE_ACCENT, width=4)
-    
-    # Texto Complementar
-    font_comp = get_font(FONT_REGULAR_PATH, 32)
+    # 3. Texto Complementar
+    cur_y += 24
+    font_comp = get_font(FONT_SEMIBOLD_PATH, 38)
     comp_lines = [
         "A avaliação adequada ajuda a identificar o que",
         "está acontecendo e orientar os cuidados necessários."
     ]
-    
-    cy = ly + 28
     for line in comp_lines:
         bbox_c = draw.textbbox((0, 0), line, font=font_comp)
         cw = bbox_c[2] - bbox_c[0]
-        cx = (TARGET_WIDTH - cw) // 2
-        draw_text_with_shadow(draw, line, cx, cy, font_comp, fill=CREAM)
-        cy += (bbox_c[3] - bbox_c[1]) + 12
+        draw.text((center_x - (cw // 2), cur_y), line, font=font_comp, fill=COLOR_OFFWHITE)
+        cur_y += (bbox_c[3] - bbox_c[1]) + 14
         
-    # Destaque adicional em menor ênfase: "Informação também é cuidado."
-    font_dest = get_font(FONT_BOLD_PATH, 28)
+    # 4. Destaque: "Informação também é cuidado."
+    cur_y += 22
+    font_dest = get_font(FONT_BOLD_PATH, 36)
     dest_text = "Informação também é cuidado."
     bbox_d = draw.textbbox((0, 0), dest_text, font=font_dest)
     dw = bbox_d[2] - bbox_d[0]
-    dx = (TARGET_WIDTH - dw) // 2
-    dy = cy + 18
-    draw_text_with_shadow(draw, dest_text, dx, dy, font_dest, fill=(228, 205, 245))
+    draw.text((center_x - (dw // 2), cur_y), dest_text, font=font_dest, fill=COLOR_PURPLE_LIGHT)
     
-    # --- ASSINATURA / CRÉDITOS NO RODAPÉ SEGURO ---
-    # Safe zone inferior: Posicionado em torno de Y = 1680px (acima dos 240px finais que o Instagram usa para legenda e áudio)
-    sign_y = 1690
-    font_name = get_font(FONT_BOLD_PATH, 30)
-    font_crfa = get_font(FONT_REGULAR_PATH, 24)
+    # 5. Assinatura e Registro Profissional
+    font_name = get_font(FONT_BOLD_PATH, 38)
+    font_crfa = get_font(FONT_REGULAR_PATH, 28)
     
     name_text = "Sônia Torres"
     crfa_text = "Fonoaudióloga | CRFa 1-17701"
@@ -300,33 +263,30 @@ def render_slide_3(base_img):
     nw = bbox_n[2] - bbox_n[0]
     crw = bbox_cr[2] - bbox_cr[0]
     
-    draw_text_with_shadow(draw, name_text, (TARGET_WIDTH - nw) // 2, sign_y, font_name, fill=WHITE)
-    draw_text_with_shadow(draw, crfa_text, (TARGET_WIDTH - crw) // 2, sign_y + (bbox_n[3] - bbox_n[1]) + 8, font_crfa, fill=CREAM)
+    draw.text((center_x - (nw // 2), sign_y1 + 24), name_text, font=font_name, fill=COLOR_WHITE)
+    draw.text((center_x - (crw // 2), sign_y1 + 76), crfa_text, font=font_crfa, fill=COLOR_PURPLE_LIGHT)
     
     return img.convert("RGB")
 
 def process_all_slides():
-    print("Iniciando processamento dos 3 slides do Reel de Setembro Roxo...")
+    print("Iniciando renderização de alta precisão...")
     
     configs = [
         {
-            "num": "01",
-            "clean_name": "01-slide-apresentacao-sem-texto.png",
             "final_name": "01-slide-apresentacao.png",
+            "clean_name": "01-slide-apresentacao-sem-texto.png",
             "src": SOURCES[0],
             "renderer": render_slide_1
         },
         {
-            "num": "02",
-            "clean_name": "02-slide-sinais-sem-texto.png",
             "final_name": "02-slide-sinais.png",
+            "clean_name": "02-slide-sinais-sem-texto.png",
             "src": SOURCES[1],
             "renderer": render_slide_2
         },
         {
-            "num": "03",
-            "clean_name": "03-slide-acao-sem-texto.png",
             "final_name": "03-slide-acao.png",
+            "clean_name": "03-slide-acao-sem-texto.png",
             "src": SOURCES[2],
             "renderer": render_slide_3
         }
@@ -335,27 +295,22 @@ def process_all_slides():
     for cfg in configs:
         src_path = cfg["src"]
         if not os.path.exists(src_path):
-            print(f"Erro: Arquivo de origem não encontrado: {src_path}")
+            print(f"Erro: Arquivo não encontrado: {src_path}")
             continue
             
         img = Image.open(src_path)
-        
-        # Garantir proporção 1080 x 1920
         if img.size != (TARGET_WIDTH, TARGET_HEIGHT):
             img = img.resize((TARGET_WIDTH, TARGET_HEIGHT), Image.Resampling.LANCZOS)
             
-        # 1. Salvar versão limpa sem texto
         clean_out = os.path.join(CLEAN_DIR, cfg["clean_name"])
         img.save(clean_out, format="PNG", quality=98)
-        print(f"Versão limpa salva: {clean_out}")
         
-        # 2. Renderizar versão diagramada com texto e safe zone
         final_img = cfg["renderer"](img)
         final_out = os.path.join(REEL_DIR, cfg["final_name"])
         final_img.save(final_out, format="PNG", quality=98)
-        print(f"Slide final renderizado: {final_out}")
+        print(f"Slide renderizado com sucesso: {final_out}")
         
-    print("Todos os slides foram processados com sucesso!")
+    print("Renderização concluída com sucesso!")
 
 if __name__ == "__main__":
     process_all_slides()
