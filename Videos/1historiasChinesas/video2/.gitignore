@@ -1,0 +1,14 @@
+# Vídeo e áudio brutos (evita limite de 100MB do GitHub)
+*.mp4
+*.wav
+*.MP3
+*.docx
+*.pdf
+
+# Pastas de compilação e frames temporários
+build/
+docs/frames/
+docs/final_frames/
+docs/samples/
+__pycache__/
+*.pyc

@@ -1,0 +1,675 @@
+{
+  "project": "Wu Zetian - A Mulher que Conquistou o Trono da China",
+  "resolution": {
+    "width": 1920,
+    "height": 1080
+  },
+  "fps": 30,
+  "blocks": [
+    {
+      "id": "gancho_abertura",
+      "audio": "audios/gancho e abertura.wav",
+      "srt": "audios/gancho e abertura.srt",
+      "duration": 71.28,
+      "scenes": [
+        {
+          "id": "G1",
+          "image": "imagens/g1.png",
+          "start": 0.0,
+          "duration": 5.5,
+          "card": {
+            "line1": "690 d.C. · QIANLING",
+            "line2": "A ESTELA EM BRANCO",
+            "show_at": 0.5,
+            "card_duration": 4.5,
+            "asset_path": "assets/title_cards/G1.png"
+          }
+        },
+        {
+          "id": "INTRO_LOGO",
+          "video_clip": "vinheta",
+          "start": 5.5,
+          "duration": 6.0,
+          "card": null
+        },
+        {
+          "id": "A1",
+          "image": "imagens/a1.png",
+          "start": 11.5,
+          "duration": 30.0,
+          "card": {
+            "line1": "690 d.C. · LUOYANG",
+            "line2": "A PRIMEIRA IMPERATRIZ",
+            "show_at": 12.0,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/A1.png"
+          }
+        },
+        {
+          "id": "A2",
+          "image": "imagens/a2.png",
+          "start": 41.5,
+          "duration": 35.78,
+          "card": {
+            "line1": "QIANLING · MAUSOLÉU IMPERIAL",
+            "line2": "O MONUMENTO SILENCIOSO",
+            "show_at": 42.5,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/A2.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bloco_01",
+      "audio": "audios/bloco 1.wav",
+      "srt": "audios/bloco 1.srt",
+      "duration": 87.52,
+      "scenes": [
+        {
+          "id": "B1-1",
+          "image": "imagens/b1-1.png",
+          "start": 0.0,
+          "duration": 29.173,
+          "card": {
+            "line1": "624 d.C. · WENSHUI, SHANXI",
+            "line2": "UMA JOVEM NO PALÁCIO",
+            "show_at": 0.8,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B1-1.png"
+          }
+        },
+        {
+          "id": "B1-2",
+          "image": "imagens/b1-2.png",
+          "start": 29.173,
+          "duration": 29.173,
+          "card": {
+            "line1": "638 d.C. · CHANG'AN",
+            "line2": "A DAMA DE TALENTO",
+            "show_at": 29.973,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B1-2.png"
+          }
+        },
+        {
+          "id": "B1-3",
+          "image": "imagens/b1-3.png",
+          "start": 58.346,
+          "duration": 29.174,
+          "card": {
+            "line1": "649 d.C. · MORTE DE TAIZONG",
+            "line2": "FIM DA PRIMEIRA ERA",
+            "show_at": 59.146,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B1-3.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bloco_02",
+      "audio": "audios/bloco 2.wav",
+      "srt": "audios/bloco 2.srt",
+      "duration": 92.4,
+      "scenes": [
+        {
+          "id": "B2-1",
+          "image": "imagens/b2-1.png",
+          "start": 0.0,
+          "duration": 30.8,
+          "card": {
+            "line1": "649 d.C. · CONVENTO GAN'YE",
+            "line2": "O CONVENTO E O RETORNO",
+            "show_at": 0.8,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B2-1.png"
+          }
+        },
+        {
+          "id": "B2-2",
+          "image": "imagens/b2-2.png",
+          "start": 30.8,
+          "duration": 30.8,
+          "card": {
+            "line1": "650 d.C. · CORTE DE GAOZONG",
+            "line2": "A ALIANÇA COM A IMPERATRIZ WANG",
+            "show_at": 31.6,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B2-2.png"
+          }
+        },
+        {
+          "id": "B2-3",
+          "image": "imagens/b2-3.png",
+          "start": 61.6,
+          "duration": 30.8,
+          "card": {
+            "line1": "654 d.C. · PALÁCIO IMPERIAL",
+            "line2": "O NASCIMENTO DA PRINCESA",
+            "show_at": 62.4,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B2-3.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bloco_03",
+      "audio": "audios/bloco 3.wav",
+      "srt": "audios/bloco 3.srt",
+      "duration": 120.28,
+      "scenes": [
+        {
+          "id": "B3-1",
+          "image": "imagens/b3-1.png",
+          "start": 0.0,
+          "duration": 30.07,
+          "card": {
+            "line1": "654 d.C. · O BERÇO SILENCIOSO",
+            "line2": "A TRAGÉDIA E A ACUSAÇÃO",
+            "show_at": 0.8,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B3-1.png"
+          }
+        },
+        {
+          "id": "B3-2",
+          "image": "imagens/b3-2.png",
+          "start": 30.07,
+          "duration": 30.07,
+          "card": {
+            "line1": "CRÔNICAS DINÁSTICAS",
+            "line2": "A DISPUTA HISTORIOGRÁFICA",
+            "show_at": 30.87,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B3-2.png"
+          }
+        },
+        {
+          "id": "B3-3",
+          "image": "imagens/b3-3.png",
+          "start": 60.14,
+          "duration": 30.07,
+          "card": {
+            "line1": "655 d.C. · A CORTE FRAGMENTADA",
+            "line2": "RESISTÊNCIA DA ARISTOCRACIA",
+            "show_at": 60.94,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B3-3.png"
+          }
+        },
+        {
+          "id": "B3-4",
+          "image": "imagens/b3-4.png",
+          "start": 90.21,
+          "duration": 30.07,
+          "card": {
+            "line1": "655 d.C. · A COROAÇÃO",
+            "line2": "WU É PROCLAMADA IMPERATRIZ",
+            "show_at": 91.01,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B3-4.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bloco_04",
+      "audio": "audios/bloco 4.wav",
+      "srt": "audios/bloco 4.srt",
+      "duration": 112.68,
+      "scenes": [
+        {
+          "id": "B4-1",
+          "image": "imagens/b4-1.png",
+          "start": 0.0,
+          "duration": 28.17,
+          "card": {
+            "line1": "660 d.C. · ER SHENG",
+            "line2": "OS DOIS SÁBIOS NO PODER",
+            "show_at": 0.8,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B4-1.png"
+          }
+        },
+        {
+          "id": "B4-2",
+          "image": "imagens/b4-2.png",
+          "start": 28.17,
+          "duration": 28.17,
+          "card": {
+            "line1": "666 d.C. · MONTE TAI",
+            "line2": "O RITUAL FENGSHAN",
+            "show_at": 28.97,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B4-2.png"
+          }
+        },
+        {
+          "id": "B4-3",
+          "image": "imagens/b4-3.png",
+          "start": 56.34,
+          "duration": 28.17,
+          "card": {
+            "line1": "674 d.C. · TIANHOU",
+            "line2": "A IMPERATRIZ CELESTIAL",
+            "show_at": 57.14,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B4-3.png"
+          }
+        },
+        {
+          "id": "B4-4",
+          "image": "imagens/b4-4.png",
+          "start": 84.51,
+          "duration": 28.17,
+          "card": {
+            "line1": "INTERIOR DA CHINA",
+            "line2": "REFORMAS SOCIAIS E AGRÍCOLAS",
+            "show_at": 85.31,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B4-4.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bloco_05",
+      "audio": "audios/bloco 5.wav",
+      "srt": "audios/bloco 5.srt",
+      "duration": 90.56,
+      "scenes": [
+        {
+          "id": "B5-1",
+          "image": "imagens/b5-1.png",
+          "start": 0.0,
+          "duration": 30.187,
+          "card": {
+            "line1": "683 d.C. · MORTE DE GAOZONG",
+            "line2": "A SUCESSÃO AMEAÇADA",
+            "show_at": 0.8,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B5-1.png"
+          }
+        },
+        {
+          "id": "B5-2",
+          "image": "imagens/b5-2.png",
+          "start": 30.187,
+          "duration": 30.187,
+          "card": {
+            "line1": "684 d.C. · A REGÊNCIA",
+            "line2": "O PODER ATRÁS DA CORTINA",
+            "show_at": 30.987,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B5-2.png"
+          }
+        },
+        {
+          "id": "B5-3",
+          "image": "imagens/b5-3.png",
+          "start": 60.374,
+          "duration": 30.186,
+          "card": {
+            "line1": "684 d.C. · YANGZHOU",
+            "line2": "A REBELIÃO CONTRA A REGENTE",
+            "show_at": 61.174,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B5-3.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bloco_06",
+      "audio": "audios/bloco 6.wav",
+      "srt": "audios/bloco 6.srt",
+      "duration": 114.96,
+      "scenes": [
+        {
+          "id": "B6-1",
+          "image": "imagens/b6-1.png",
+          "start": 0.0,
+          "duration": 28.74,
+          "card": {
+            "line1": "686 d.C. · LUOYANG",
+            "line2": "AS QUATRO URNAS DE BRONZE",
+            "show_at": 0.8,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B6-1.png"
+          }
+        },
+        {
+          "id": "B6-2",
+          "image": "imagens/b6-2.png",
+          "start": 28.74,
+          "duration": 28.74,
+          "card": {
+            "line1": "A REDE DE INFORMANTES",
+            "line2": "DENÚNCIAS E VIGILÂNCIA",
+            "show_at": 29.54,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B6-2.png"
+          }
+        },
+        {
+          "id": "B6-3",
+          "image": "imagens/b6-3.png",
+          "start": 57.48,
+          "duration": 28.74,
+          "card": {
+            "line1": "OS JUÍZES IMPERIAIS",
+            "line2": "O FIM DA VELHA NOBREZA",
+            "show_at": 58.28,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B6-3.png"
+          }
+        },
+        {
+          "id": "B6-4",
+          "image": "imagens/b6-4.png",
+          "start": 86.22,
+          "duration": 28.74,
+          "card": {
+            "line1": "LUOYANG AO CREPÚSCULO",
+            "line2": "A CENTRALIZAÇÃO DO ESTADO",
+            "show_at": 87.02,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B6-4.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bloco_07",
+      "audio": "audios/bloco 7.wav",
+      "srt": "audios/bloco 7.srt",
+      "duration": 134.72,
+      "scenes": [
+        {
+          "id": "B7-1",
+          "image": "imagens/B7-1.png",
+          "start": 0.0,
+          "duration": 33.68,
+          "card": {
+            "line1": "688 d.C. · MINGTANG",
+            "line2": "O SALÃO CÓSMICO DE LUOYANG",
+            "show_at": 0.8,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B7-1.png"
+          }
+        },
+        {
+          "id": "B7-2",
+          "image": "imagens/B7-2.png",
+          "start": 33.68,
+          "duration": 33.68,
+          "card": {
+            "line1": "RIO LUO",
+            "line2": "O PRESSÁGIO DA PEDRA SAGRADA",
+            "show_at": 34.48,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B7-2.png"
+          }
+        },
+        {
+          "id": "B7-3",
+          "image": "imagens/B7-3.png",
+          "start": 67.36,
+          "duration": 33.68,
+          "card": {
+            "line1": "DAYUN JING",
+            "line2": "A PROFECIA DA GRANDE NUVEM",
+            "show_at": 68.16,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B7-3.png"
+          }
+        },
+        {
+          "id": "B7-4",
+          "image": "imagens/B7-4.png",
+          "start": 101.04,
+          "duration": 33.68,
+          "card": {
+            "line1": "690 d.C. · A COROAÇÃO",
+            "line2": "PROCLAMAÇÃO DA DINASTIA ZHOU",
+            "show_at": 101.84,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B7-4.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bloco_08",
+      "audio": "audios/bloco 8.wav",
+      "srt": "audios/bloco 8.srt",
+      "duration": 107.12,
+      "scenes": [
+        {
+          "id": "B8-1",
+          "image": "imagens/B8-1.png",
+          "start": 0.0,
+          "duration": 35.707,
+          "card": {
+            "line1": "EXAMES IMPERIAIS (KEJU)",
+            "line2": "A ASCENSÃO DOS TALENTOS",
+            "show_at": 0.8,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B8-1.png"
+          }
+        },
+        {
+          "id": "B8-2",
+          "image": "imagens/B8-2.png",
+          "start": 35.707,
+          "duration": 35.707,
+          "card": {
+            "line1": "PORTÃO NORTE",
+            "line2": "BEIMEN XUESHI: OS ERUDITOS",
+            "show_at": 36.507,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B8-2.png"
+          }
+        },
+        {
+          "id": "B8-3",
+          "image": "imagens/B8-3.png",
+          "start": 71.414,
+          "duration": 35.706,
+          "card": {
+            "line1": "CAMPOS MILITARES",
+            "line2": "A PROFISSIONALIZAÇÃO DO EXÉRCITO",
+            "show_at": 72.214,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B8-3.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bloco_09",
+      "audio": "audios/bloco 9.wav",
+      "srt": "audios/bloco 9.srt",
+      "duration": 73.76,
+      "scenes": [
+        {
+          "id": "B9-1",
+          "image": "imagens/B9-1.png",
+          "start": 0.0,
+          "duration": 36.88,
+          "card": {
+            "line1": "O DILEMA DINÁSTICO",
+            "line2": "CLÃ WU OU CLÃ LI?",
+            "show_at": 0.8,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B9-1.png"
+          }
+        },
+        {
+          "id": "B9-2",
+          "image": "imagens/B9-2.png",
+          "start": 36.88,
+          "duration": 36.88,
+          "card": {
+            "line1": "698 d.C. · O RETORNO",
+            "line2": "A RESTAURAÇÃO DA LINHAGEM TANG",
+            "show_at": 37.68,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B9-2.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bloco_10",
+      "audio": "audios/bloco 10.wav",
+      "srt": "audios/bloco 10.srt",
+      "duration": 89.72,
+      "scenes": [
+        {
+          "id": "B10-1",
+          "image": "imagens/B10-1.png",
+          "start": 0.0,
+          "duration": 29.907,
+          "card": {
+            "line1": "705 d.C. · LUOYANG",
+            "line2": "O GOLPE DOS CINCO MINISTROS",
+            "show_at": 0.8,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B10-1.png"
+          }
+        },
+        {
+          "id": "B10-2",
+          "image": "imagens/B10-2.png",
+          "start": 29.907,
+          "duration": 29.907,
+          "card": {
+            "line1": "A ABDICAÇÃO",
+            "line2": "O RETORNO DE ZHONGZONG",
+            "show_at": 30.707,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B10-2.png"
+          }
+        },
+        {
+          "id": "B10-3",
+          "image": "imagens/b10-3.png",
+          "start": 59.814,
+          "duration": 29.906,
+          "card": {
+            "line1": "705 d.C. · PALÁCIO SHANGYANG",
+            "line2": "OS ÚLTIMOS DIAS DE WU ZETIAN",
+            "show_at": 60.614,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B10-3.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bloco_11",
+      "audio": "audios/bloco 11.wav",
+      "srt": "audios/bloco 11.srt",
+      "duration": 70.96,
+      "scenes": [
+        {
+          "id": "B11-1",
+          "image": "imagens/b11-1.png",
+          "start": 0.0,
+          "duration": 35.48,
+          "card": {
+            "line1": "HISTORIOGRAFIA CONFUCIONISTA",
+            "line2": "O JULGAMENTO MORAL",
+            "show_at": 0.8,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B11-1.png"
+          }
+        },
+        {
+          "id": "B11-2",
+          "image": "imagens/b11-2.png",
+          "start": 35.48,
+          "duration": 35.48,
+          "card": {
+            "line1": "O IMPÉRIO TANG",
+            "line2": "PROSPERIDADE E ESTABILIDADE",
+            "show_at": 36.28,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B11-2.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bloco_12",
+      "audio": "audios/bloco 12.wav",
+      "srt": "audios/bloco 12.srt",
+      "duration": 118.52,
+      "scenes": [
+        {
+          "id": "B12-1",
+          "image": "imagens/b12-1.png",
+          "start": 0.0,
+          "duration": 39.507,
+          "card": {
+            "line1": "QIANLING · PROVÍNCIA DE SHAANXI",
+            "line2": "O MAUSOLÉU DOS DOIS MONARCAS",
+            "show_at": 0.8,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B12-1.png"
+          }
+        },
+        {
+          "id": "B12-2",
+          "image": "imagens/b12-2.png",
+          "start": 39.507,
+          "duration": 39.507,
+          "card": {
+            "line1": "WUZI BEI",
+            "line2": "A ESTELA SEM PALAVRAS",
+            "show_at": 40.307,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B12-2.png"
+          }
+        },
+        {
+          "id": "B12-3",
+          "image": "imagens/b12-3.png",
+          "start": 79.014,
+          "duration": 39.506,
+          "card": {
+            "line1": "EPÍLOGO",
+            "line2": "O VEREDITO DO TEMPO",
+            "show_at": 79.814,
+            "card_duration": 6.0,
+            "asset_path": "assets/title_cards/B12-3.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cta_final",
+      "audio": "audios/cta final.wav",
+      "srt": null,
+      "duration": 20.04,
+      "scenes": [
+        {
+          "id": "CTA",
+          "image": "imagens/thumb.png",
+          "start": 0.0,
+          "duration": 20.04,
+          "card": {
+            "line1": "HISTÓRIAS CHINESAS",
+            "line2": "INSCREVA-SE NO CANAL",
+            "show_at": 0.5,
+            "card_duration": 19.04,
+            "asset_path": "assets/title_cards/CTA.png"
+          }
+        }
+      ]
+    }
+  ]
+}

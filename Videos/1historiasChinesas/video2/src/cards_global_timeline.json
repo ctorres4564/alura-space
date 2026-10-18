@@ -1,0 +1,338 @@
+[
+  {
+    "scene_id": "G1",
+    "asset_path": "assets/title_cards/G1.png",
+    "start": 0.5,
+    "end": 5.0,
+    "line1": "690 d.C. · QIANLING",
+    "line2": "A ESTELA EM BRANCO"
+  },
+  {
+    "scene_id": "A1",
+    "asset_path": "assets/title_cards/A1.png",
+    "start": 12.0,
+    "end": 18.0,
+    "line1": "690 d.C. · LUOYANG",
+    "line2": "A PRIMEIRA IMPERATRIZ"
+  },
+  {
+    "scene_id": "A2",
+    "asset_path": "assets/title_cards/A2.png",
+    "start": 42.5,
+    "end": 48.5,
+    "line1": "QIANLING · MAUSOLÉU IMPERIAL",
+    "line2": "O MONUMENTO SILENCIOSO"
+  },
+  {
+    "scene_id": "B1-1",
+    "asset_path": "assets/title_cards/B1-1.png",
+    "start": 78.08,
+    "end": 84.08,
+    "line1": "624 d.C. · WENSHUI, SHANXI",
+    "line2": "UMA JOVEM NO PALÁCIO"
+  },
+  {
+    "scene_id": "B1-2",
+    "asset_path": "assets/title_cards/B1-2.png",
+    "start": 107.25,
+    "end": 113.25,
+    "line1": "638 d.C. · CHANG'AN",
+    "line2": "A DAMA DE TALENTO"
+  },
+  {
+    "scene_id": "B1-3",
+    "asset_path": "assets/title_cards/B1-3.png",
+    "start": 136.43,
+    "end": 142.43,
+    "line1": "649 d.C. · MORTE DE TAIZONG",
+    "line2": "FIM DA PRIMEIRA ERA"
+  },
+  {
+    "scene_id": "B2-1",
+    "asset_path": "assets/title_cards/B2-1.png",
+    "start": 165.6,
+    "end": 171.6,
+    "line1": "649 d.C. · CONVENTO GAN'YE",
+    "line2": "O CONVENTO E O RETORNO"
+  },
+  {
+    "scene_id": "B2-2",
+    "asset_path": "assets/title_cards/B2-2.png",
+    "start": 196.4,
+    "end": 202.4,
+    "line1": "650 d.C. · CORTE DE GAOZONG",
+    "line2": "A ALIANÇA COM A IMPERATRIZ WANG"
+  },
+  {
+    "scene_id": "B2-3",
+    "asset_path": "assets/title_cards/B2-3.png",
+    "start": 227.2,
+    "end": 233.2,
+    "line1": "654 d.C. · PALÁCIO IMPERIAL",
+    "line2": "O NASCIMENTO DA PRINCESA"
+  },
+  {
+    "scene_id": "B3-1",
+    "asset_path": "assets/title_cards/B3-1.png",
+    "start": 258.0,
+    "end": 264.0,
+    "line1": "654 d.C. · O BERÇO SILENCIOSO",
+    "line2": "A TRAGÉDIA E A ACUSAÇÃO"
+  },
+  {
+    "scene_id": "B3-2",
+    "asset_path": "assets/title_cards/B3-2.png",
+    "start": 288.07,
+    "end": 294.07,
+    "line1": "CRÔNICAS DINÁSTICAS",
+    "line2": "A DISPUTA HISTORIOGRÁFICA"
+  },
+  {
+    "scene_id": "B3-3",
+    "asset_path": "assets/title_cards/B3-3.png",
+    "start": 318.14,
+    "end": 324.14,
+    "line1": "655 d.C. · A CORTE FRAGMENTADA",
+    "line2": "RESISTÊNCIA DA ARISTOCRACIA"
+  },
+  {
+    "scene_id": "B3-4",
+    "asset_path": "assets/title_cards/B3-4.png",
+    "start": 348.21,
+    "end": 354.21,
+    "line1": "655 d.C. · A COROAÇÃO",
+    "line2": "WU É PROCLAMADA IMPERATRIZ"
+  },
+  {
+    "scene_id": "B4-1",
+    "asset_path": "assets/title_cards/B4-1.png",
+    "start": 378.28,
+    "end": 384.28,
+    "line1": "660 d.C. · ER SHENG",
+    "line2": "OS DOIS SÁBIOS NO PODER"
+  },
+  {
+    "scene_id": "B4-2",
+    "asset_path": "assets/title_cards/B4-2.png",
+    "start": 406.45,
+    "end": 412.45,
+    "line1": "666 d.C. · MONTE TAI",
+    "line2": "O RITUAL FENGSHAN"
+  },
+  {
+    "scene_id": "B4-3",
+    "asset_path": "assets/title_cards/B4-3.png",
+    "start": 434.62,
+    "end": 440.62,
+    "line1": "674 d.C. · TIANHOU",
+    "line2": "A IMPERATRIZ CELESTIAL"
+  },
+  {
+    "scene_id": "B4-4",
+    "asset_path": "assets/title_cards/B4-4.png",
+    "start": 462.79,
+    "end": 468.79,
+    "line1": "INTERIOR DA CHINA",
+    "line2": "REFORMAS SOCIAIS E AGRÍCOLAS"
+  },
+  {
+    "scene_id": "B5-1",
+    "asset_path": "assets/title_cards/B5-1.png",
+    "start": 490.96,
+    "end": 496.96,
+    "line1": "683 d.C. · MORTE DE GAOZONG",
+    "line2": "A SUCESSÃO AMEAÇADA"
+  },
+  {
+    "scene_id": "B5-2",
+    "asset_path": "assets/title_cards/B5-2.png",
+    "start": 521.15,
+    "end": 527.15,
+    "line1": "684 d.C. · A REGÊNCIA",
+    "line2": "O PODER ATRÁS DA CORTINA"
+  },
+  {
+    "scene_id": "B5-3",
+    "asset_path": "assets/title_cards/B5-3.png",
+    "start": 551.33,
+    "end": 557.33,
+    "line1": "684 d.C. · YANGZHOU",
+    "line2": "A REBELIÃO CONTRA A REGENTE"
+  },
+  {
+    "scene_id": "B6-1",
+    "asset_path": "assets/title_cards/B6-1.png",
+    "start": 581.52,
+    "end": 587.52,
+    "line1": "686 d.C. · LUOYANG",
+    "line2": "AS QUATRO URNAS DE BRONZE"
+  },
+  {
+    "scene_id": "B6-2",
+    "asset_path": "assets/title_cards/B6-2.png",
+    "start": 610.26,
+    "end": 616.26,
+    "line1": "A REDE DE INFORMANTES",
+    "line2": "DENÚNCIAS E VIGILÂNCIA"
+  },
+  {
+    "scene_id": "B6-3",
+    "asset_path": "assets/title_cards/B6-3.png",
+    "start": 639.0,
+    "end": 645.0,
+    "line1": "OS JUÍZES IMPERIAIS",
+    "line2": "O FIM DA VELHA NOBREZA"
+  },
+  {
+    "scene_id": "B6-4",
+    "asset_path": "assets/title_cards/B6-4.png",
+    "start": 667.74,
+    "end": 673.74,
+    "line1": "LUOYANG AO CREPÚSCULO",
+    "line2": "A CENTRALIZAÇÃO DO ESTADO"
+  },
+  {
+    "scene_id": "B7-1",
+    "asset_path": "assets/title_cards/B7-1.png",
+    "start": 696.48,
+    "end": 702.48,
+    "line1": "688 d.C. · MINGTANG",
+    "line2": "O SALÃO CÓSMICO DE LUOYANG"
+  },
+  {
+    "scene_id": "B7-2",
+    "asset_path": "assets/title_cards/B7-2.png",
+    "start": 730.16,
+    "end": 736.16,
+    "line1": "RIO LUO",
+    "line2": "O PRESSÁGIO DA PEDRA SAGRADA"
+  },
+  {
+    "scene_id": "B7-3",
+    "asset_path": "assets/title_cards/B7-3.png",
+    "start": 763.84,
+    "end": 769.84,
+    "line1": "DAYUN JING",
+    "line2": "A PROFECIA DA GRANDE NUVEM"
+  },
+  {
+    "scene_id": "B7-4",
+    "asset_path": "assets/title_cards/B7-4.png",
+    "start": 797.52,
+    "end": 803.52,
+    "line1": "690 d.C. · A COROAÇÃO",
+    "line2": "PROCLAMAÇÃO DA DINASTIA ZHOU"
+  },
+  {
+    "scene_id": "B8-1",
+    "asset_path": "assets/title_cards/B8-1.png",
+    "start": 831.2,
+    "end": 837.2,
+    "line1": "EXAMES IMPERIAIS (KEJU)",
+    "line2": "A ASCENSÃO DOS TALENTOS"
+  },
+  {
+    "scene_id": "B8-2",
+    "asset_path": "assets/title_cards/B8-2.png",
+    "start": 866.91,
+    "end": 872.91,
+    "line1": "PORTÃO NORTE",
+    "line2": "BEIMEN XUESHI: OS ERUDITOS"
+  },
+  {
+    "scene_id": "B8-3",
+    "asset_path": "assets/title_cards/B8-3.png",
+    "start": 902.61,
+    "end": 908.61,
+    "line1": "CAMPOS MILITARES",
+    "line2": "A PROFISSIONALIZAÇÃO DO EXÉRCITO"
+  },
+  {
+    "scene_id": "B9-1",
+    "asset_path": "assets/title_cards/B9-1.png",
+    "start": 938.32,
+    "end": 944.32,
+    "line1": "O DILEMA DINÁSTICO",
+    "line2": "CLÃ WU OU CLÃ LI?"
+  },
+  {
+    "scene_id": "B9-2",
+    "asset_path": "assets/title_cards/B9-2.png",
+    "start": 975.2,
+    "end": 981.2,
+    "line1": "698 d.C. · O RETORNO",
+    "line2": "A RESTAURAÇÃO DA LINHAGEM TANG"
+  },
+  {
+    "scene_id": "B10-1",
+    "asset_path": "assets/title_cards/B10-1.png",
+    "start": 1012.08,
+    "end": 1018.08,
+    "line1": "705 d.C. · LUOYANG",
+    "line2": "O GOLPE DOS CINCO MINISTROS"
+  },
+  {
+    "scene_id": "B10-2",
+    "asset_path": "assets/title_cards/B10-2.png",
+    "start": 1041.99,
+    "end": 1047.99,
+    "line1": "A ABDICAÇÃO",
+    "line2": "O RETORNO DE ZHONGZONG"
+  },
+  {
+    "scene_id": "B10-3",
+    "asset_path": "assets/title_cards/B10-3.png",
+    "start": 1071.89,
+    "end": 1077.89,
+    "line1": "705 d.C. · PALÁCIO SHANGYANG",
+    "line2": "OS ÚLTIMOS DIAS DE WU ZETIAN"
+  },
+  {
+    "scene_id": "B11-1",
+    "asset_path": "assets/title_cards/B11-1.png",
+    "start": 1101.8,
+    "end": 1107.8,
+    "line1": "HISTORIOGRAFIA CONFUCIONISTA",
+    "line2": "O JULGAMENTO MORAL"
+  },
+  {
+    "scene_id": "B11-2",
+    "asset_path": "assets/title_cards/B11-2.png",
+    "start": 1137.28,
+    "end": 1143.28,
+    "line1": "O IMPÉRIO TANG",
+    "line2": "PROSPERIDADE E ESTABILIDADE"
+  },
+  {
+    "scene_id": "B12-1",
+    "asset_path": "assets/title_cards/B12-1.png",
+    "start": 1172.76,
+    "end": 1178.76,
+    "line1": "QIANLING · PROVÍNCIA DE SHAANXI",
+    "line2": "O MAUSOLÉU DOS DOIS MONARCAS"
+  },
+  {
+    "scene_id": "B12-2",
+    "asset_path": "assets/title_cards/B12-2.png",
+    "start": 1212.27,
+    "end": 1218.27,
+    "line1": "WUZI BEI",
+    "line2": "A ESTELA SEM PALAVRAS"
+  },
+  {
+    "scene_id": "B12-3",
+    "asset_path": "assets/title_cards/B12-3.png",
+    "start": 1251.77,
+    "end": 1257.77,
+    "line1": "EPÍLOGO",
+    "line2": "O VEREDITO DO TEMPO"
+  },
+  {
+    "scene_id": "CTA",
+    "asset_path": "assets/title_cards/CTA.png",
+    "start": 1290.98,
+    "end": 1310.02,
+    "line1": "HISTÓRIAS CHINESAS",
+    "line2": "INSCREVA-SE NO CANAL"
+  }
+]
