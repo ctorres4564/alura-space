@@ -1,80 +1,43 @@
-# Documentação Técnica e Editorial: Reel "Essa Criança Não Precisa de Fono"
+# Documentação Técnica e Editorial: Reel "Essa Criança Não Precisa de Fono" (Versão com Áudios Reais da Pasta `audios2`)
 
 - **Título:** Essa criança não precisa de fono. Precisa é de limites!
 - **Profissional:** Sônia Torres — Fonoaudióloga
 - **Formato:** Vídeo vertical 9:16 (1080×1920), 30 fps, MP4 (H.264 / AAC)
-- **Duração Estimada:** 30 a 33 segundos
-- **Objetivo:** Provocar reflexão e quebrar o estigma de que dificuldades na fala e na linguagem infantil são meramente "birra" ou "falta de limites".
+- **Duração Total:** 41.50 segundos
+- **Objetivo:** Desmistificar a confusão frequente entre dificuldades de linguagem/comunicação infantil e desobediência ou falta de limites.
+- **Origem dos Áudios:** Gravações reais da pasta `audios2/` (`audio1.mp3` a `audio6.mp3`).
 
 ---
 
-## 1. Arquitetura da Produção
+## 1. Timeline e Sincronização Detalhada
 
-```
-01reels_novos/
-├── assets/
-│   └── fonts/ (Poppins, Cinzel/Playfair)
-├── docs/
-│   └── roteiro_limites_comunicacao.md
-├── prompts/
-│   └── prompts_cenas_limites.md
-├── scripts/
-│   ├── gerar_narracao_limites.py
-│   └── renderizar_reel_limites.py
-└── publicacao/
-    └── limites-comunicacao/
-        ├── audios/ (áudios das cenas e narração contínua normalizada)
-        ├── imagens/ (quadros 1 a 6 tratados com legendas e animações)
-        ├── clipes/ (clipes de vídeo com interpolação de movimento Ken Burns)
-        ├── reel_sonia_limites_final.mp4 (vídeo renderizado final)
-        ├── reel_sonia_capa.png (capa para Instagram)
-        ├── reel_sonia_legenda.txt (texto para postagem)
-        └── reel_sonia_legendas.srt (legendas sincronizadas)
-```
-
----
-
-## 2. Fluxo de Dados e Renderização
-
-1. **Síntese de Áudio Neural (Edge-TTS):**
-   - Cada trecho de fala é gerado com a voz neural `pt-BR-FranciscaNeural`, aplicando ajustes de entonação (pitch/rate) condizentes com o tom dramático de cada cena.
-   - Os áudios são concatenados e normalizados em loudness de acordo com a norma EBU R128 (-16 LUFS).
-2. **Medição Exata de Duração:**
-   - As durações reais de cada trecho de áudio determinam a duração exata dos clipes das Cenas 1 a 5.
-   - A Cena 6 (Card Final) permanece visível por 5,5 segundos com a música de fundo em destaque.
-3. **Tratamento Visual e Tipografia:**
-   - Composição de lettering de alto impacto respeitando as safe zones do Instagram (1080×1920, margens superior de 250px e inferior de 380px livres).
-   - Destaque em dourado (`#D4AF37`) nas palavras-chave e tipografia refinada para reforçar autoridade e sofisticação.
-4. **Animação Cinematográfica (Motion Dynamics):**
-   - Aplicação de movimentos contínuos de câmera suave:
-     - Cena 1: *Slow push-in* (zoom sutil aproximando na criança).
-     - Cena 2: *Slow horizontal pan & push* (direcionando o olhar do gesto para o brinquedo).
-     - Cena 3: *Subtle close-in* (aproximação lenta no rosto expressivo).
-     - Cena 4: *Gentle lateral tracking* (movimento lateral estabilizado na conexão mãe-filha).
-     - Cena 5: *Fade tipográfico dramático*.
-     - Cena 6: *Card CTA estático com acabamento suave*.
-5. **Mixagem de Áudio Final:**
-   - Narração principal em primeiro plano.
-   - Trilha sonora instrumental suave com ducking a -26 dB durante as falas e subida suave para -15 dB no card final, terminando com fade-out de 2 segundos.
-
----
-
-## 3. Roteiro Cronometrado
-
-| Cena | Janela Temporal | Texto na Tela | Narração Sônia Torres | Tom / Efeito |
+| Marco Temporal | Áudio Fonte | Trecho Falado | Cena Visual | Lettering na Tela (Safe Area) |
 | :--- | :--- | :--- | :--- | :--- |
-| **1. O Julgamento** | 00:00 – 00:04 | “ESSA CRIANÇA NÃO PRECISA DE FONO! PRECISA É DE LIMITES!” | *"Essa criança não precisa de fono. Precisa é de limites!"* | Crítico, provocativo; impacto sonoro discreto inicial. |
-| **2. A Dificuldade** | 00:04 – 00:10 | “ELA TENTA FALAR. NÃO CONSEGUE SE EXPLICAR. E FICA FRUSTRADA.” | *"Ela tenta dizer o que quer. Mas nem sempre consegue se fazer entender."* | Descritivo, observador e sensível. |
-| **3. A Virada** | 00:10 – 00:16 | “MAS E SE NÃO FOR FALTA DE LIMITES?” | *"E se o problema não for falta de limites?"* | Interrogativo, reflexivo com pausa dramática. |
-| **4. A Compreensão** | 00:16 – 00:23 | “DIFICULDADES DE COMUNICAÇÃO PODEM GERAR FRUSTRAÇÃO.” | *"Dificuldades para compreender ou se expressar também podem gerar frustração."* | Acolhedor, esclarecedor, empático. |
-| **5. Frase de Impacto**| 00:23 – 00:27 | “NEM TODA CRISE É BIRRA.” (branco)<br>“NEM TODA DIFICULDADE É DESOBEDIÊNCIA.” (dourado) | *"Antes de julgar, procure compreender."* | Firme, solene, pausa expressiva. |
-| **6. Card Final** | 00:27 – 00:33 | “FALTA DE LIMITES OU DIFICULDADE DE COMUNICAÇÃO? O QUE VOCÊ PENSA? COMENTE!” | *(Apenas trilha sonora reflexiva)* | Institucional, convidativo, 5 segundos legíveis. |
+| **00:00.0 – 00:03.2** | `audio1.mp3` (pt 1) | *"Na minha época, criança assim precisava era de limites."* | **Cena 1:** Menina no sofá angustiada tentando falar; mãe ao fundo de braços cruzados | “NA MINHA ÉPOCA, CRIANÇA ASSIM PRECISAVA DE LIMITES!” |
+| **00:03.2 – 00:06.5** | `audio1.mp3` (pt 2) | *"Quantas vezes você já ouviu essa frase?"* | **Cena 1:** Câmera continua em aproximação lenta (push-in) | “QUANTAS VEZES VOCÊ JÁ OUVIU ESSA FRASE?” |
+| **00:06.5 – 00:09.5** | `audio2.mp3` (pt 1) | *"Mas será que todo comportamento interpretado como desobediência..."* | **Cena 2:** Menina apontando para o brinquedo na mesa; mãe com dúvida | “TODO COMPORTAMENTO INTERPRETADO COMO DESOBEDIÊNCIA...” |
+| **00:09.5 – 00:12.6** | `audio2.mp3` (pt 2) | *"...é realmente falta de limites?"* | **Cena 2:** Pan lateral suave direcionando o olhar | “...É REALMENTE FALTA DE LIMITES?” |
+| **00:12.6 – 00:16.8** | `audio3.mp3` (pt 1) | *"Algumas crianças encontram dificuldades para compreender ou expressar o que desejam..."* | **Cena 3:** Close-up emotivo e expressivo no olhar da menina | “DIFICULDADES PARA COMPREENDER OU SE EXPRESSAR...” |
+| **00:16.8 – 00:21.1** | `audio3.mp3` (pt 2) | *"...e essa dificuldade pode provocar frustração."* | **Cena 3:** Close-in sutil evidenciando a vulnerabilidade | “...PODEM GERAR MUITA FRUSTRAÇÃO.” |
+| **00:21.1 – 00:25.0** | `audio4.mp3` (pt 1) | *"Isso não significa que toda a crise esteja relacionada à linguagem."* | **Cena 4:** Mãe agachada na altura da filha, segurando suas mãos com carinho | “NEM TODA CRISE ESTÁ NA LINGUAGEM.” |
+| **00:25.0 – 00:29.1** | `audio4.mp3` (pt 2) | *"Significa que precisamos compreender antes de julgar."* | **Cena 4:** Tracking lateral suave na escuta afetuosa | “PRECISAMOS COMPREENDER ANTES DE JULGAR.” |
+| **00:29.1 – 00:35.3** | `audio5.mp3` | *"E você, acha que muitos adultos confundem dificuldades de comunicação com falta de educação?"* | **Cena 5:** Card de alto contraste em roxo profundo e dourado | “NEM TODA CRISE É BIRRA.” (Branco)<br>“CONFUNDIMOS COMUNICAÇÃO COM FALTA DE EDUCAÇÃO?” (Dourado) |
+| **00:35.3 – 00:37.5** | `audio6.mp3` | *"Conte sua opinião nos comentários."* | **Cena 6:** Card Final Institucional Sônia Torres | Chamada falada sobre o card |
+| **00:37.5 – 00:41.5** | *(Música)* | *(Trilha instrumental de piano e violão em destaque suave com fade-out)* | **Cena 6:** Exposição completa dos dados de contato por mais 4 segundos | “FALTA DE LIMITES OU DIFICULDADE DE COMUNICAÇÃO?”<br>“O QUE VOCÊ PENSA? COMENTE!”<br>Sônia Torres \| Fonoaudióloga |
 
 ---
 
-## 4. Como Manter e Reexecutar
+## 2. Parâmetros de Mixagem e Áudio
 
-Para reproduzir ou customizar os vídeos e recursos:
-1. Executar `python scripts/gerar_narracao_limites.py` para atualizar os arquivos de áudio e narração.
-2. Executar `python scripts/renderizar_reel_limites.py` para gerar os cards, clipes animados e montagem final do MP4.
-3. Os arquivos finais estarão organizados e disponíveis na pasta `publicacao/limites-comunicacao/`.
+- **Normalização EBU R128:** -16 LUFS integrado (padrão Instagram/Reels).
+- **Trilha de Fundo:**
+  - `00:00 a 00:37.5`: Ducking constante a **-26 dB** para manter a inteligibilidade cristalina da voz humana.
+  - `00:37.5 a 00:39.5`: Subida suave da música para **-15 dB** no card final.
+  - `00:39.5 a 00:41.5`: Fade-out progressivo de 2 segundos.
+- **Efeito de Impacto:** Frequência de 55 Hz adicionada aos 0.05s de abertura, realçando a força da primeira frase sem sobrecarregar o áudio.
+
+---
+
+## 3. Scripts de Execução
+
+- `scripts/renderizar_reel_limites_v2.py`: Script principal de montagem, renderização e sincronização.

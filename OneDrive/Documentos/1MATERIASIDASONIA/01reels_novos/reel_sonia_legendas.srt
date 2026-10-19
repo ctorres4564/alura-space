@@ -1,31 +1,39 @@
 1
-00:00:00,000 --> 00:00:02,000
-Essa criança não precisa de fono!
+00:00:00,000 --> 00:00:03,200
+Na minha época, criança assim precisava era de limites.
 
 2
-00:00:02,000 --> 00:00:04,450
-Precisa é de limites!
+00:00:03,200 --> 00:00:06,530
+Quantas vezes você já ouviu essa frase?
 
 3
-00:00:04,500 --> 00:00:07,000
-Ela tenta dizer o que quer...
+00:00:06,530 --> 00:00:09,500
+Mas será que todo comportamento interpretado como desobediência...
 
 4
-00:00:07,000 --> 00:00:09,700
-...mas nem sempre consegue se fazer entender.
+00:00:09,500 --> 00:00:12,640
+...é realmente falta de limites?
 
 5
-00:00:09,800 --> 00:00:13,800
-E se o problema não for falta de limites?
+00:00:12,640 --> 00:00:16,800
+Algumas crianças encontram dificuldades para compreender ou expressar o que desejam...
 
 6
-00:00:14,000 --> 00:00:19,600
-Dificuldades para compreender ou se expressar também podem gerar frustração.
+00:00:16,800 --> 00:00:21,080
+...e essa dificuldade pode provocar frustração.
 
 7
-00:00:19,800 --> 00:00:23,800
-Antes de julgar, procure compreender.
+00:00:21,080 --> 00:00:25,000
+Isso não significa que toda crise esteja relacionada à linguagem.
 
 8
-00:00:24,000 --> 00:00:30,000
-Falta de limites ou dificuldade de comunicação? O que você pensa? Comente!
+00:00:25,000 --> 00:00:29,050
+Significa que precisamos compreender antes de julgar.
+
+9
+00:00:29,050 --> 00:00:35,320
+E você, acha que muitos adultos confundem dificuldades de comunicação com falta de educação?
+
+10
+00:00:35,320 --> 00:00:41,500
+Conte sua opinião nos comentários.
