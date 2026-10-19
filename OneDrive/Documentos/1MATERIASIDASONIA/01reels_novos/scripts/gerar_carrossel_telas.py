@@ -420,9 +420,9 @@ def render_slide_7():
     
     # Card Elegante Central em Off-White (idêntico ao fechamento do vídeo)
     card_w = 940
-    card_h = 440
+    card_h = 410
     card_x = (W - card_w) // 2
-    card_y = 150
+    card_y = 135
     
     # Sombra do card
     draw.rounded_rectangle(
@@ -440,55 +440,59 @@ def render_slide_7():
     
     # Textos do card interno
     t1_lines = ["FALTA DE LIMITES OU", "DIFICULDADE DE COMUNICAÇÃO?"]
-    curr_y = card_y + 60
+    curr_y = card_y + 48
     for line in t1_lines:
         bbox = font_title.getbbox(line)
         lw = bbox[2] - bbox[0]
         draw.text(((W - lw) // 2, curr_y), line, font=font_title, fill=(20, 20, 20))
-        curr_y += 54
+        curr_y += 50
         
-    curr_y += 18
+    curr_y += 14
     t2 = "O QUE VOCÊ PENSA?"
     bbox2 = font_subtitle.getbbox(t2)
     w2 = bbox2[2] - bbox2[0]
     draw.text(((W - w2) // 2, curr_y), t2, font=font_subtitle, fill=(115, 62, 147))
     
-    curr_y += 76
+    curr_y += 65
     t3 = "Sônia Torres | Fonoaudióloga"
     bbox3 = font_body_bold.getbbox(t3)
     w3 = bbox3[2] - bbox3[0]
     draw.text(((W - w3) // 2, curr_y), t3, font=font_body_bold, fill=(40, 40, 40))
     
-    curr_y += 40
+    curr_y += 36
     t4 = "sonia.fonosuite.com"
     bbox4 = font_body.getbbox(t4)
     w4 = bbox4[2] - bbox4[0]
     draw.text(((W - w4) // 2, curr_y), t4, font=font_body, fill=(110, 110, 110))
     
-    # Bloco inferior de interação
-    box_y = 630
-    draw.rounded_rectangle([70, box_y, W - 70, box_y + 360], radius=20, fill=BG_CARD)
-    draw.text((100, box_y + 30), "Vamos conversar nos comentários?", font=font_subtitle, fill=ACCENT_GOLD)
+    # Bloco inferior de interação (ajustado para acomodar texto e ações sem colisão)
+    box_y = 575
+    box_h = 600
+    draw.rounded_rectangle([70, box_y, W - 70, box_y + box_h], radius=20, fill=BG_CARD)
+    draw.text((100, box_y + 28), "Vamos conversar nos comentários?", font=font_subtitle, fill=ACCENT_GOLD)
     
     cta_body = (
         "Como funciona a rotina de telas na sua casa?\n\n"
         "Você já notou alguma diferença no comportamento, na agitação ou na comunicação da criança após períodos mais longos em frente ao celular ou TV?"
     )
-    cby = box_y + 85
-    for cl in wrap_text(cta_body, font_body_bold, W - 200, draw):
-        draw.text((100, cby), cl, font=font_body_bold, fill=TEXT_WHITE)
-        cby += 40
+    cby = box_y + 78
+    for cl in wrap_text(cta_body, font_body, W - 200, draw):
+        draw.text((100, cby), cl, font=font_body, fill=TEXT_WHITE)
+        cby += 36
         
-    # Ações de engajamento
-    act_y = box_y + 240
+    # Ações de engajamento posicionadas DINAMICAMENTE após o texto (sem sobreposição)
+    act_y = cby + 26
     actions = [
-        "💬 Deixe sua experiência abaixo",
-        "↗️ Envie para mães, pais e educadores",
-        "🔖 Salve este post para consultar depois"
+        "💬 Deixe sua experiência nos comentários abaixo",
+        "↗️ Envie para mães, pais e educadores que precisam ler isso",
+        "🔖 Salve este post para consultar sempre que tiver dúvidas"
     ]
     for act in actions:
-        draw.text((100, act_y), act, font=font_body, fill=ACCENT_LILAC)
-        act_y += 34
+        # Fundo arredondado sutil para destacar cada ação
+        act_bbox = font_body.getbbox(act)
+        draw.rounded_rectangle([95, act_y - 6, W - 95, act_y + 36], radius=10, fill=BOX_BG)
+        draw.text((115, act_y), act, font=font_body, fill=ACCENT_LILAC)
+        act_y += 50
         
     # Assinatura de rodapé com selo de fechamento
     draw_footer(draw, is_last=True)
