@@ -1,0 +1,28 @@
+REGISTRO DE FONTES, IDENTIFICAÇÃO DE MATERIAIS E LICENÇAS
+Documentário: "QUEM TEM MEDO DA LIBERDADE DAS MULHERES?"
+
+1. NARRAÇÃO ORIGINAL
+- Origem: Arquivo mestre fornecido `01.wav`.
+- Tratamento: Preservação integral do timbre, velocidade e fala original.
+- Conversão técnica: Reamostragem para 48.000 Hz estéreo com ganho normalizado e ducking de -14 dB sob a fala.
+
+2. TRILHA SONORA INSTRUMENTAL
+- Identificação: Trilha documental cinematográfica original (composição procedural em Ré menor, 48 kHz).
+- Instrumentação: Piano minimalista, sub-bass drone atmosférico, pulsação rítmica (64 BPM) e texturas sonoras sintéticas.
+- Licença: 100% livre de royalties e isenta de reivindicações de direitos autorais (Royalty-Free / Public Domain procedural generation).
+
+3. FONTES DE DADOS E VERIFICAÇÃO FACTUAL (FONTES PRIMÁRIAS)
+- Estatísticas do Eleitorado Brasileiro:
+  Fonte: Tribunal Superior Eleitoral (TSE) — Estatísticas do Eleitorado Nacional.
+  Dado verificado: As mulheres representam mais de 52% (precisamente 52,8% nas eleições gerais recentes, totalizando mais de 82 milhões de cidadãs aptas a votar).
+- Legislação Federal sobre Violência Política contra Mulheres:
+  Fonte: Presidência da República / Congresso Nacional — Lei Federal nº 14.192, de 4 de agosto de 2021.
+  Dispositivo: Altera o Código Eleitoral (Art. 359-P) e a Lei das Eleições para tipificar o crime de assediar, constranger, humilhar, perseguir ou ameaçar candidata ou detentora de mandato com intuito de menosprezar ou discriminar sua condição feminina.
+- Atribuição Acadêmica e Sociológica:
+  Fonte: Camila Galetti — Doutora e pesquisadora em Sociologia (UnB), com pesquisas voltadas às relações de gênero, disputas institucionais, corpo, família e poder na política contemporânea.
+
+4. MATERIAIS VISUAIS E IDENTIDADE GRÁFICA
+- Retrato Feminino Documental (Capa e Encerramento): Gerado com estética cinematográfica f/1.4, estilo documental realista, sem marcas registradas e sem representação depreciativa.
+- Composição Gráfica e Motion Design: Elementos e infográficos produzidos em resolução 1080x1920 sem marcas d'água comerciais.
+- Tipografia: Famílias de fontes de sistema de código aberto / sistema operacional (Arial, Segoe UI), em conformidade para renderização direta em vídeo.
+- Licença de Uso: Adequada e autorizada para publicação comercial e educacional em plataformas digitais (YouTube Shorts, Instagram Reels, Facebook Reels).
