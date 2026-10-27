@@ -22,7 +22,6 @@ def render_scenes():
         out_clip = f"temp_clips/clip_{idx:02d}.mp4"
         frames = int(round(dur * 30))
         
-        # Filtro de movimento cinematográfico suave ou estático nítido
         if motion == "zoom_in":
             vf = (
                 f"zoompan=z='min(zoom+0.0003,1.06)':d={frames}:"
@@ -55,18 +54,15 @@ def render_scenes():
         subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         clip_files.append(out_clip)
         
-    # Escrever concat list
     with open("temp_clips/concat_list.txt", "w", encoding="utf-8") as f:
         for clip in clip_files:
-            # Caminho relativo simples
             f.write(f"file '{os.path.basename(clip)}'\n")
             
     print("Todas as cenas individuais foram renderizadas com sucesso!")
 
 def render_final_video():
-    print("Concatenando cenas, unindo áudio masterizado e queimando legendas dinâmicas...")
+    print("Concatenando cenas, unindo áudio masterizado e aplicando legendas ASS posicionadas...")
     
-    # 1. Concatena os clipes de vídeo sem áudio
     temp_concat_video = "temp_clips/concatenated.mp4"
     cmd_concat = [
         "ffmpeg", "-y",
@@ -78,18 +74,11 @@ def render_final_video():
     ]
     subprocess.run(cmd_concat, check=True)
     
-    # 2. Une vídeo + áudio master + legendas integradas
     out_final = "VIDEO_LIBERDADE_MULHERES_FINAL/video_liberdade_mulheres.mp4"
     os.makedirs(os.path.dirname(out_final), exist_ok=True)
     
-    # Estilo de legendas: Arial Negrito, tamanho proporcional 1080x1920 (FontSize=26),
-    # borda preta sólida (Outline=3), sombra (Shadow=1), margem vertical segura (MarginV=160)
-    sub_filter = (
-        "subtitles=legendas.srt:"
-        "force_style='FontName=Arial,Bold=1,FontSize=24,"
-        "PrimaryColour=&H00FFFFFF,OutlineColour=&H00080808,"
-        "BorderStyle=1,Outline=3,Shadow=2,Alignment=2,MarginV=160'"
-    )
+    # Filtro ASS: lê diretamente legendas.ass que possui PlayResX=1080, PlayResY=1920, Fontsize=42 e MarginV=340
+    sub_filter = "ass=legendas.ass"
     
     cmd_final = [
         "ffmpeg", "-y",
@@ -105,9 +94,9 @@ def render_final_video():
         "-shortest",
         out_final
     ]
-    print("Iniciando renderização final de alta qualidade...")
+    print("Iniciando renderização final com nova escala e posicionamento de legendas...")
     subprocess.run(cmd_final, check=True)
-    print(f"Vídeo final renderizado e salvo em: {out_final}")
+    print(f"Vídeo final re-renderizado com sucesso em: {out_final}")
 
 if __name__ == "__main__":
     render_scenes()
